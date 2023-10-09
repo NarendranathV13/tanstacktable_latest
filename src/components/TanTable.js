@@ -4,7 +4,7 @@ import {
     getCoreRowModel,
     getPaginationRowModel, //for pagination 
     getSortedRowModel,// for sorting inside table
-    getFilteredRowModel, //for filtering
+    getFilteredRowModel, //for filtering column
 } from "@tanstack/react-table";
 import React,{useState} from "react";
 const TanTable = ({ details, handleSort }) => {
