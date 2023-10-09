@@ -9,10 +9,11 @@ const TanstackTable = () =>{
   const fetchData = async (sortParam) => {
     try {
       const response = await GetAxiosData('/employees', {
-        sort_by: sortParam.columnId,
-        sort_dir: sortParam.isSortedDesc ? 'desc' : 'asc',
-        name: searchName, // passing the filtered data as params
-        department: searchDepartment, 
+        sortBy: sortParam.columnId,
+        order: "asc",
+        filter: searchName, // passing the filtered data as params
+        page:1,
+        limit:5,
      
       });
       setDetails(response.data);
@@ -34,16 +35,16 @@ const TanstackTable = () =>{
   <div className='container my-3'>
         <h3 className=' text-center text-warning'>Search by field</h3>
         <div className='row'>
-          <div className='col-lg-6'>
+          <div className='col-lg-12'>
             <input
               type="text"
               className="form-control"
-              placeholder="Name"
+              placeholder="Global search"
               value={searchName}
               onChange={(e) => setSearchName(e.target.value)}
             />
           </div>
-          <div className='col-lg-6'>
+          {/* <div className='col-lg-6'>
             <input
               type="text"
               className="form-control"
@@ -51,7 +52,7 @@ const TanstackTable = () =>{
               value={searchDepartment}
               onChange={(e) => setSearchDepartment(e.target.value)}
             />
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -7,7 +7,7 @@ import {
     getFilteredRowModel, //for filtering column
 } from "@tanstack/react-table";
 import React,{useState} from "react";
-const TanTable = ({ details, handleSort }) => {
+const TanTable = ({ details, handleSort, pageIndex, pageSize, pageCount }) => {
 const [sorting, setSorting] = useState([])
 const [filtering, setFiltering] = useState('')
  
